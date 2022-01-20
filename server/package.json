@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Accept payments with Stripe Checkout",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "serve": "yarn start",
+    "test": "echo \"Error: there are no tests!\" && exit 1"
+  },
+  "author": "cwatkins",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "stripe": "^8.195.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

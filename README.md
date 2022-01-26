@@ -1,6 +1,6 @@
 # Accept payments using Vue 3, Express.js and Stripe Checkout
 
-This demo shows you how to integrate with Stripe [Checkout](https://stripe.com/docs/checkout) using Vue 3 and Express.js.
+This demo shows you how to integrate with Stripe [Checkout](https://stripe.com/docs/checkout) using Vue 3 and Express.js. It was presented as part of a talk at Vue.js Nation 2022. You can find the slides [here](https://docs.google.com/presentation/d/1UqoXr-wqmPPUHJy3h8apiPMVA6nnp3zKhkOC-q-8bVY/edit?usp=sharing).
 
 Building a payment form UI from scratch is difficult -- input field validation, error message handing, and localization are just a few things to think about when designing a simple checkout flow.
 

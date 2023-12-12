@@ -9,6 +9,7 @@ Building a payment form UI from scratch is difficult -- input field validation, 
 Once your customer is ready to pay, use the Stripe Checkout API to redirect them to the URL of your Stripe hosted payment page.
 
 ## Demo
+
 The demo is running in test mode -- use `4242424242424242` as a test card number with any CVC + future expiration date.
 
 Use the `4000002500003155` test card number to trigger a 3D Secure challenge flow.
@@ -19,10 +20,10 @@ Use the `4000002500003155` test card number to trigger a 3D Secure challenge flo
 
 1. Register for a free [Stripe account](https://dashboard.stripe.com/register) if you don't have one.
 2. Create a .env file using the .env.example template
-1. Add your Stripe secret key, which you can get from the [Stripe dashboard](https://dashboard.stripe.com)
+3. Add your Stripe secret key, which you can get from the [Stripe dashboard](https://dashboard.stripe.com)
 4. Create products using the product information in `USER_SHOPPING_CART` using the [Stripe dashboard](https://dashboard.stripe.com) or Products and Prices API
-1. Replace the {{PRODUCT_ID}} with test Stripe Price IDs in server.js
-5. Optional: Update the URL for the `success_url` and `cancel_url` parameters in server.js, if you've changed the default port for Vite (3000)
+5. Replace the {{PRODUCT_ID}} with test Stripe Price IDs in server.js
+6. Optional: Update the URL for the `success_url` and `cancel_url` parameters in server.js, if you've changed the default port for Vite (3000)
 
 ### Setup steps in `client/`
 

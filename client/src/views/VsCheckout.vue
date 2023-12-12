@@ -1,5 +1,4 @@
 <template>
-  <h1 class="text-2xl uppercase pb-2">Checkout</h1>
   <checkout-summary :cart="cart" />
   <checkout-button :isLoading="isLoading" @click="redirectToStripe" />
 </template>
@@ -14,19 +13,30 @@ const cart = ref([]);
 
 // Get the cart data
 onBeforeMount(async () => {
-  const response = await fetch("/api/shopping-cart").then((r) => r.json());
-  cart.value = response.cart;
+  const response = await fetch("/api/shopping-cart");
+  const body = await response.json();
+  cart.value = body.cart;
 });
 
 // Click handler for button
 const redirectToStripe = async () => {
   isLoading.value = true;
 
-  const response = await fetch("/api/create-checkout-session", {
-    method: "POST",
-  });
-  const { url } = await response.json();
+  try {
+    const response = await fetch("/api/create-checkout-session", {
+      method: "POST",
+    });
+    const { url, error } = await response.json();
 
-  window.location.href = url;
+    if (error) {
+      isLoading.value = false;
+      console.log("Checkout error: ", error);
+    }
+
+    window.location.url = url;
+  } catch (error) {
+    isLoading.value = false;
+    console.log("Error: ", error);
+  }
 };
 </script>

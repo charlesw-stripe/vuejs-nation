@@ -1,6 +1,6 @@
 # Accept payments using Vue 3, Express.js and Stripe Checkout
 
-This demo shows you how to integrate with Stripe [Checkout](https://stripe.com/docs/checkout) using Vue 3 and Express.js. It was presented as part of a talk at Vue.js Nation 2022. You can find the slides [here](https://docs.google.com/presentation/d/1UqoXr-wqmPPUHJy3h8apiPMVA6nnp3zKhkOC-q-8bVY/edit?usp=sharing).
+This demo shows you how to integrate with Stripe [Checkout](https://stripe.com/docs/checkout) using Vue 3 and Express.js. It was presented as part of a talk at Vue.js Nation 2022 and updated in December of 2023. You can find the slides [here](https://docs.google.com/presentation/d/1UqoXr-wqmPPUHJy3h8apiPMVA6nnp3zKhkOC-q-8bVY/edit?usp=sharing).
 
 Building a payment form UI from scratch is difficult -- input field validation, error message handing, and localization are just a few things to think about when designing a simple checkout flow.
 
@@ -22,7 +22,7 @@ Use the `4000002500003155` test card number to trigger a 3D Secure challenge flo
 2. Create a .env file using the .env.example template
 3. Add your Stripe secret key, which you can get from the [Stripe dashboard](https://dashboard.stripe.com)
 4. Create products using the product information in `USER_SHOPPING_CART` using the [Stripe dashboard](https://dashboard.stripe.com) or Products and Prices API
-5. Replace the {{PRODUCT_ID}} with test Stripe Price IDs in server.js
+5. Replace the `stripeProductId`s with your own test Stripe Price IDs in server.js
 6. Optional: Update the URL for the `success_url` and `cancel_url` parameters in server.js, if you've changed the default port for Vite (3000)
 
 ### Setup steps in `client/`

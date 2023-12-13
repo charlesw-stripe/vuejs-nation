@@ -54,6 +54,9 @@ app.post("/create-checkout-session", async (req, res) => {
       line_items: lineItems,
       success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `http://localhost:3000/`,
+      automatic_tax: {
+        enabled: true,
+      },
       shipping_address_collection: {
         allowed_countries: ["US", "CA"],
       },
@@ -62,23 +65,10 @@ app.post("/create-checkout-session", async (req, res) => {
     res.send({ url: session.url });
   } catch (error) {
     console.log(error);
-    res.send({ error: error?.raw?.message ?? "Something went wrong" });
+    const errorCode = error?.statusCode ?? 500;
+    const errorMessage = error?.message ?? "An unexpected error occurred.";
+    res.status(errorCode).send({ error: errorMessage });
   }
 });
 
 app.listen(4242, () => console.log(`Node server listening on port ${4242}!`));
-
-/**
- * Retrieves a cart using line item IDs from Stripe.
- * This will usually be a database query.
- *  */
-function retrieveCart(checkoutData) {
-  const cart = checkoutData.map((lineItem) => {
-    const { price } = lineItem;
-    const item = USER_SHOPPING_CART.filter(
-      (p) => p.stripePriceId == price.id,
-    )[0];
-    return item;
-  });
-  return cart;
-}

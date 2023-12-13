@@ -3,12 +3,12 @@
     <div class="flex flex-col h-screen md:grid md:grid-rows-5">
       <header class="flex-2 text-center md:row-span-1">
         <router-link to="/">
-          <span class="text-xs"> Restart demo </span>
+          <span class="text-sm"> Restart demo </span>
         </router-link>
       </header>
       <main class="w-full flex-1 md:row-span-3">
         <div class="self-center">
-          <router-view></router-view>
+          <slot></slot>
         </div>
       </main>
       <footer class="flex-2 md:row-span-1 md:self-end md:my-8">
@@ -39,5 +39,5 @@
   </div>
 </template>
 <script setup>
-import LogoLink from "./components/LogoLink.vue";
+import LogoLink from "./LogoLink.vue";
 </script>

@@ -15,7 +15,6 @@
 </template>
 <script setup>
 import CheckoutTotalsLine from "./CheckoutTotalsLine.vue";
-
 defineProps({
   subtotal: Number,
   estimatedShipping: Number,

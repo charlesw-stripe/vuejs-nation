@@ -1,8 +1,8 @@
 <template>
-  <section class="border">
-    <h2 class="text-base bg-zinc-100 px-12">Your cart</h2>
+  <section class="md:border">
+    <h2 class="text-base text-center bg-zinc-100 px-12">Your cart</h2>
     <div class="px-12 pt-2 pb-4">
-      <h3 class="font-semibold uppercase text-left">Arrives Feb 1, 2023</h3>
+      <h3 class="font-semibold uppercase text-left">Arrives Feb 1, 2024</h3>
       <hr />
       <checkout-product
         v-for="item in props.cart"

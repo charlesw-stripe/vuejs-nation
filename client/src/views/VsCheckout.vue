@@ -21,7 +21,6 @@ onBeforeMount(async () => {
 // Click handler for button
 const redirectToStripe = async () => {
   isLoading.value = true;
-
   try {
     const response = await fetch("/api/create-checkout-session", {
       method: "POST",
@@ -31,12 +30,13 @@ const redirectToStripe = async () => {
     if (error) {
       isLoading.value = false;
       console.log("Checkout error: ", error);
+      return;
     }
 
-    window.location.url = url;
-  } catch (error) {
+    window.location.href = url;
+  } catch (e) {
     isLoading.value = false;
-    console.log("Error: ", error);
+    console.log("Error: ", e);
   }
 };
 </script>

@@ -4,7 +4,7 @@
   "description": "Accept payments with Stripe Checkout",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
     "serve": "yarn start",
     "test": "echo \"Error: there are no tests!\" && exit 1"
   },
